@@ -55,8 +55,8 @@ const pugOptions = {
   pretty: true,
   basedir: src.root
 }
-gulp.task('pug', (done) => {
-  return gulp.src([src.pug, '!' + src.root + '**/_*.pug'])
+gulp.task("pug", (done) => {
+  return gulp.src([src.pug, "!" + src.root + "**/_*.pug"])
     .pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
     .pipe(pug(pugOptions))
     .pipe(gulp.dest(dist.root));
@@ -88,7 +88,7 @@ gulp.task("js", (done) => {
   return gulp
     .src(src.js)
     .pipe(plumber())
-    .pipe(babel({presets: ['@babel/preset-env']}))
+    .pipe(babel({presets: ["@babel/preset-env"]}))
     .pipe(gulp.dest(dist.js));
   done();
 })
@@ -127,7 +127,7 @@ const imageminOption = [
   })
 ];
 
-gulp.task('imagemin', (done) => {
+gulp.task("imagemin", (done) => {
   return gulp
     .src(src.img)
     .pipe(imagemin(imageminOption))
@@ -154,7 +154,7 @@ gulp.task("watch", (done) => {
     browserSync.reload();
     done();
   }
-  gulp.watch([src.pug, '!' + src.root + '**/_*.pug'], gulp.series("pug"));
+  gulp.watch([src.pug, "!" + src.root + "**/_*.pug"], gulp.series("pug"));
   gulp.watch(src.css, gulp.series("sass"));
   gulp.watch(src.js, gulp.series("js"));
   gulp.watch(src.img, gulp.series("imagemin"));
@@ -163,4 +163,4 @@ gulp.task("watch", (done) => {
 })
 
 gulp.task("default", gulp.series("serve", "watch"));
-
+gulp.task("build", gulp.series("pug", "sass", "js", "imagemin"));
