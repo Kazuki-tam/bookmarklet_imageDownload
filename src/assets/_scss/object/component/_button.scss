@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+.c-button {
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  padding: 0.5em 1em;
+  font-weight: bold;
+}
+
+.c-button__border--double {
+  color: #000;
+  border: double 4px #000;
+  border-radius: 3px;
+  transition: .4s;
+
+  &:hover,
+  :focus {
+    background: #000;
+    color: #fff;
+    border: double 4px #fff;
+  }
+}

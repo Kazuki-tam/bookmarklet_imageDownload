@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+// Breakpoint
+// --------------------------------------------------
+$breakpoints:('sp': 'screen and (max-width: 767px)',
+  'pc-only': 'screen and (min-width: 767px)',
+  'md': 'screen and (max-width: 1028px)',
+  'lg': 'screen and (max-width: 1230px)',
+) !default;
+
+// @mixinでメディアクエリを呼び出す
+@mixin mq($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// Font
+// --------------------------------------------------
+$baseFontSize: 10px;
+$baseFontFamily: 'ヒラギノ角ゴ Pro W3',
+'ヒラギノ角ゴ W3',
+'メイリオ',
+'ＭＳ Ｐゴシック',
+sans-serif;
+
+// ベースのフォント
+@mixin baseFont {
+  font-family: $baseFontFamily;
+  font-size: $baseFontSize;
+}
+
+// Size
+// --------------------------------------------------
+// 画面サイズ767px以下のとき、fontsizeを自動計算
+@function get_vw($size, $viewport:767) {
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+// font-size
+@mixin fz_vw($font_size:10) {
+  font-size: get_vw($font_size);
+}
+
+// Color
+// --------------------------------------------------

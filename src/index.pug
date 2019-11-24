@@ -1,0 +1,31 @@
+extends /_includes/_layout.pug
+append variables
+  //- Required
+  - var pageTitle= "Image Downloader";
+  - var pageDescription= "Image Downloader Sample";
+
+block content
+  // contents
+  .swiper-container.swiper-containerMain
+      .swiper-wrapper
+        .swiper-slide
+          img(src="/common/img/slider1.jpg" alt="スライダー1")
+          p.slider-text.slider-text--white スライダーのダウンロード1
+        .swiper-slide
+          img(src="/common/img/slider2.jpg" alt="スライダー2")
+          p.slider-text スライダーのダウンロード2
+        .swiper-slide
+          img(src="/common/img/slider3.jpg" alt="スライダー3")
+          p.slider-text.slider-text--white スライダーのダウンロード3
+        .swiper-slide
+          img(src="/common/img/slider4.jpg" alt="スライダー4")
+          p.slider-text スライダーのダウンロード4
+        .swiper-slide
+          img(src="/common/img/slider5.jpg" alt="スライダー5")
+          p.slider-text.slider-text--white スライダーのダウンロード5
+  .l-contents
+    .p-content
+      p.p-content__text 画像ダウンロードの実行関数
+      button.c-button.c-button__border--double(type="button" onclick="download()") 任意画像ダウンロード
+      button.c-button.c-button__border--double(type="button" onclick="downloadAll()") 画像一括ダウンロード
+  // /contents
