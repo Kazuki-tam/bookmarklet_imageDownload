@@ -1,7 +1,16 @@
 @charset "utf-8";
 
 .l-contents {
+  * {
+    box-sizing: border-box;
+  }
+
   width: 960px;
   margin: 0 auto;
   padding: 4rem 2rem;
+
+  @include mq(md) {
+    width: 100%;
+    padding: 0;
+  }
 }

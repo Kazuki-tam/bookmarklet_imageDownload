@@ -3,8 +3,13 @@
 .c-menu__list {
   list-style: none;
   display: flex;
+  padding: 0;
 
-  &-item {
+  &-item:not(:last-child) {
     margin-right: 1rem;
+  }
+
+  @include mq (sp) {
+    justify-content: center;
   }
 }

@@ -6,4 +6,9 @@
   text-align: center;
   font-size: 1.4rem;
   background: #000;
+  box-sizing: border-box;
+
+  @include mq (sp) {
+    padding: 0;
+  }
 }

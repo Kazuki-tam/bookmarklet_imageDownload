@@ -5,4 +5,9 @@
   height: auto;
   padding: 1rem;
   background: #000;
+  box-sizing: border-box;
+
+  @include mq (sp) {
+    padding: 0;
+  }
 }
