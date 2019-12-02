@@ -38,7 +38,7 @@ function download() {
   const imgCount = imgLinks.length;
   // ダイアログ値取得
   const result = window.prompt(
-    "何番目のサムネイル画像を開きますか？\nこのページでは" +
+    "何番目の画像を開きますか？\nこのページでは" +
     imgCount +
     "番目まで選択できます。",
     1
@@ -66,7 +66,7 @@ function download() {
       // aタグ削除
       document.body.removeChild(link);
     } else {
-      window.alert("正しいサムネイル番号を入力してください！");
+      window.alert("正しい画像番号を入力してください！");
     }
   }
 }
